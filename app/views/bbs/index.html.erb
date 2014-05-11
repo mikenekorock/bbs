@@ -1,0 +1,31 @@
+<h1>Listing bbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Text</th>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bbs.each do |bb| %>
+      <tr>
+        <td><%= bb.name %></td>
+        <td><%= bb.text %></td>
+        <td><%= bb.time %></td>
+        <td><%= link_to 'Show', bb %></td>
+        <td><%= link_to 'Edit', edit_bb_path(bb) %></td>
+        <td><%= link_to 'Destroy', bb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= render 'form' %>
+<!--<%= link_to 'New Bb', new_bb_path %>-->

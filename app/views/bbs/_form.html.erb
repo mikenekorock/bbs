@@ -1,0 +1,30 @@
+<%= form_for(@bb) do |f| %>
+  <% if @bb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bb.errors.count, "error") %> prohibited this bb from being saved:</h2>
+
+      <ul>
+      <% @bb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :value => 'nameless' %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+    <%= f.hidden_field :time, :value => Time.now %>
+  </div>
+  <!--<div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>-->
+  <div class="actions">
+    <%= f.submit 'nnn'%>
+  </div>
+<% end %>
