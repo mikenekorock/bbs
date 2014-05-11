@@ -1,6 +1,14 @@
-<h1>Listing bbs</h1>
+ <h1>Listing bbs</h1>
 
-<table>
+ <div id="header" style="background:red;">header</div>
+
+ <div class="row">
+  <div class="col-sm-3" style="background:green">Name</div>
+  <div class="col-sm-6" style="background:pink">Time</div>
+  <div class="col-sm-3" style="background:orange">aaa</div>
+ </div>
+ 
+ <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -24,8 +32,10 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-<%= render 'form' %>
-<!--<%= link_to 'New Bb', new_bb_path %>-->
+ </table>
+  
+ <br>
+ <%= render 'form' %>
+ <!--<%= link_to 'New Bb', new_bb_path %>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
