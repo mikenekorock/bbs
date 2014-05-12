@@ -18,13 +18,13 @@
   <div class="field">
     <%= f.label :text %><br>
     <%= f.text_area :text %>
-    <%= f.hidden_field :time, :value => Time.now %>
+    <%= f.hidden_field :time, :value => Time.now.to_s(:db) %>
   </div>
   <!--<div class="field">
     <%= f.label :time %><br>
     <%= f.text_field :time %>
   </div>-->
   <div class="actions">
-    <%= f.submit 'nnn'%>
+    <%= f.submit 'POST'%>
   </div>
 <% end %>

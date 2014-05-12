@@ -1,13 +1,16 @@
  <h1>Listing bbs</h1>
-
- <div id="header" style="background:red;">header</div>
-
+<% no = 1 %>
+ <% @bbs.each do |bb| %>
  <div class="row">
-  <div class="col-sm-3" style="background:green">Name</div>
-  <div class="col-sm-6" style="background:pink">Time</div>
-  <div class="col-sm-3" style="background:orange">aaa</div>
+  <div class="col-sm-1" style="background:green">#<%= no %></div>
+  <div class="col-sm-7" style="background:gray">Name:<%= bb.name %></div>
+  <div class="col-sm-4" style="background:pink"><%= bb.time %></div>
+  <div class="col-sm-12" style="background:orange"><%= simple_format(bb.text) %></div>
  </div>
- 
+ <br>
+ <% no += 1 %>
+ <% end %>
+ <!--
  <table>
   <thead>
     <tr>
@@ -33,7 +36,7 @@
     <% end %>
   </tbody>
  </table>
-  
+  -->
  <br>
  <%= render 'form' %>
  <!--<%= link_to 'New Bb', new_bb_path %>-->
